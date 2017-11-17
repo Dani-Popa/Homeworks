@@ -1,9 +1,13 @@
-/*
-In this class i implement BubleSort algorithm
--call the method getAchieve to sort SalesGuy acording to achieve
 
-*/
 public class BubbleSort {
+
+    /**
+     * /*
+     In this class i implement BubleSort algorithm
+     -call the method getAchieve to sort SalesGuy acording to achieve
+
+     */
+
 
     public void sortRepresentativeAchieves(SalesRepresentative[] reps) {
 

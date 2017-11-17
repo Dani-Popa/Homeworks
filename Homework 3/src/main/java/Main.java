@@ -1,11 +1,14 @@
-/*
-In Main class we have the main method , where i initialized SalesGuy, their quota, nrOfSales and their achieves
--add every saleGuy in array
--print SalesGuy before and after sort
- */
+
 
 public class Main {
     public static void main(String[] args) {
+        /**
+         * /*
+         In Main class we have the main method , where i initialized SalesGuy, their quota, nrOfSales and their achieves
+         -add every saleGuy in array
+         -print SalesGuy before and after sort
+         */
+         */
 
         SalesRepresentative[] reps; // declaring an array
         BubbleSort bubbleSort = new BubbleSort(); //new object from BubleSortc class

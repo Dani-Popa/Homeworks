@@ -1,11 +1,14 @@
-/*
-In this class I impelmented the variable that i need for SaleGuy
--override toString() method
 
- */
 
 public class SalesRepresentative {
 
+    /**
+     * /*
+     In this class I impelmented the variable that i need for SaleGuy
+     -override toString() method
+
+     */
+     */
     //variable that i need for salesGuy
     private int quota;
     private int nrOfSales;
