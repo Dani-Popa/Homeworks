@@ -25,4 +25,12 @@ public class Car {
     public  boolean isNew() {
         return isNew;
     }
+
+    public int getChargingTime() {
+        return chargingTime;
+    }
+
+    public int getPrice() {
+        return price;
+    }
 }

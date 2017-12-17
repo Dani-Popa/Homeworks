@@ -15,12 +15,14 @@ public class Dealership {
     private int stockFourFour;
     private int stockFourTwo;
 
-    public Dealership(String manufacturerRepresentative1, String manufacturerRepresentative2,String manufacturerRepresentative3, ArrayList<Car> newCars, ArrayList<Car> usedCar) {
+    public Dealership(String manufacturerRepresentative1, String manufacturerRepresentative2,
+                      String manufacturerRepresentative3) {
         this.manufacturerRepresentative1 = manufacturerRepresentative1;
         this.manufacturerRepresentative2 = manufacturerRepresentative2;
-        this.manufacturerRepresentative3=manufacturerRepresentative2;
-        this.newCars = newCars;
-        this.usedCar = usedCar;
+        this.manufacturerRepresentative3 = manufacturerRepresentative2;
+    newCars=new ArrayList<Car>();
+    usedCar=new ArrayList<Car>();
+
     }
 
     public void addCar(Car car) {
@@ -44,6 +46,10 @@ public class Dealership {
         }
     }
 
+    public void removeCar(Car car){
+        //TODO
+    }
+
     public int getStockI3() {
         return stockI3;
     }
@@ -62,5 +68,21 @@ public class Dealership {
 
     public int getStockFourTwo() {
         return stockFourTwo;
+    }
+
+    public ArrayList<Car> getCarsWithFastChargingTime() {
+        ArrayList<Car> carWithFastCharging = new ArrayList<Car>();
+        for (Car car : usedCar) {
+            if (car.getChargingTime() <= 2) {
+                carWithFastCharging.add(car);
+            }
+
+        }
+        for (Car car : newCars) {
+            if (car.getChargingTime() <= 2) {
+                carWithFastCharging.add(car);
+            }
+        }
+        return carWithFastCharging;
     }
 }
