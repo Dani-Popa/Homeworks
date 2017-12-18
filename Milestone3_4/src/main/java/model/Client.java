@@ -25,4 +25,7 @@ public class Client {
     public void askForCarsWithFastCharging(Dealership dealership) {
         dealership.getCarsWithFastChargingTime();
     }
+    public void askForCarsInStock(Dealership dealership){
+        dealership.getCarsInStock();
+    }
 }

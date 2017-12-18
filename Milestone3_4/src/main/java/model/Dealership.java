@@ -20,16 +20,16 @@ public class Dealership {
         this.manufacturerRepresentative1 = manufacturerRepresentative1;
         this.manufacturerRepresentative2 = manufacturerRepresentative2;
         this.manufacturerRepresentative3 = manufacturerRepresentative2;
-    newCars=new ArrayList<Car>();
-    usedCar=new ArrayList<Car>();
+        newCars = new ArrayList<Car>();
+        usedCar = new ArrayList<Car>();
 
     }
 
     public void addCar(Car car) {
         if (car.isNew()) {
-            usedCar.add(car);
-        } else {
             newCars.add(car);
+        } else {
+            usedCar.add(car);
         }
         if (car instanceof I3) {
             stockI3++;
@@ -46,7 +46,7 @@ public class Dealership {
         }
     }
 
-    public void removeCar(Car car){
+    public void removeCar(Car car) {
         //TODO
     }
 
@@ -70,6 +70,14 @@ public class Dealership {
         return stockFourTwo;
     }
 
+    public ArrayList<Car> getNewCars() {
+        return newCars;
+    }
+
+    public ArrayList<Car> getUsedCar() {
+        return usedCar;
+    }
+
     public ArrayList<Car> getCarsWithFastChargingTime() {
         ArrayList<Car> carWithFastCharging = new ArrayList<Car>();
         for (Car car : usedCar) {
@@ -85,4 +93,25 @@ public class Dealership {
         }
         return carWithFastCharging;
     }
+
+  public ArrayList<Car> getCarsInStock(){
+        ArrayList<Car>carsInStock=new ArrayList<Car>();
+      for (Car car:usedCar) {
+          if(getStockI3()>0){
+              carsInStock.add(car);
+          }else if(getStockFourTwo()>0){
+              carsInStock.add(car);
+          }else if(getStockFourFour()>0){
+              carsInStock.add(car);
+          }else if(getStockeGolf()>0){
+              carsInStock.add(car);
+          }else if(getStockeUP()>0){
+              carsInStock.add(car);
+          }else{
+              System.out.println("Sorry we don't have any car in stock");
+          }
+
+      }
+      return carsInStock;
+  }
 }
