@@ -11,7 +11,7 @@ public class Car {
     private boolean isNew;
     private int horsePower;
 
-    public Car(int electricMotorCapacity, int energyConsuption, String manufacturer, String model, int productionYear, int price, int chargingTime, boolean isNew) {
+    public Car(int electricMotorCapacity, int energyConsuption, String manufacturer, String model, int productionYear, int price, int chargingTime, boolean isNew,int horsePower) {
         this.electricMotorCapacity = electricMotorCapacity;
         this.energyConsuption = energyConsuption;
         Manufacturer = manufacturer;
@@ -20,9 +20,10 @@ public class Car {
         this.price = price;
         this.chargingTime = chargingTime;
         this.isNew = isNew;
+        this.horsePower=horsePower;
     }
 
-    public  boolean isNew() {
+    public boolean isNew() {
         return isNew;
     }
 
@@ -32,5 +33,32 @@ public class Car {
 
     public int getPrice() {
         return price;
+    }
+
+    public String getManufacturer() {
+        return Manufacturer;
+    }
+
+    public String getModel() {
+        return Model;
+    }
+
+    public int getEnergyConsuption() {
+        return energyConsuption;
+    }
+
+    public int getHorsePower() {
+        return horsePower;
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "energyConsuption=" + energyConsuption +
+                ", Manufacturer='" + Manufacturer + '\'' +
+                ", Model='" + Model + '\'' +
+                ", price=" + price +
+                ", horsePower=" + horsePower +
+                '}';
     }
 }

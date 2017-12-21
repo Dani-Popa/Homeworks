@@ -12,13 +12,12 @@ public class Client {
         this.budget = budget;
     }
 
-    public void buyCar(Car car, Dealership dealership) {
-        dealership.removeCar(car);
-        if (budget > car.getPrice()) {
 
-            budget = budget - car.getPrice();
-        } else {
-            System.out.println("This client doesn't have enough money");
+    public void buyCarAtFullPrice(Car car, Dealership dealership){
+        if (budget>car.getPrice()){
+            dealership.removeCar(car);
+        }else{
+            System.out.println("This client doesn't have enaugh money");
         }
     }
 
