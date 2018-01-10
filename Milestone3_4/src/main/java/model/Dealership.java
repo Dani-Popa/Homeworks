@@ -9,7 +9,7 @@ public class Dealership extends ArrayList<Car> {
     private String manufacturerRepresentative3;
     private ArrayList<Car> newCars;
     private ArrayList<Car> usedCar;
-    private  ArrayList<Car> allCars;
+    private ArrayList<Car> allCars;
     private int stockI3;
     private int stockeUP;
     private int stockeGolf;
@@ -59,6 +59,7 @@ public class Dealership extends ArrayList<Car> {
 
     public void removeCar(Car car) {
         allCars.remove(car);
+
     }
 
     public int getStockI3() {
@@ -94,18 +95,9 @@ public class Dealership extends ArrayList<Car> {
     }
 
 
-
-
-
-    public ArrayList<Car> getCarsWithFastChargingTime() {
+    public ArrayList<Car> getCarsWithFastChargingTime(ArrayList<Car> allCars) {
         ArrayList<Car> carWithFastCharging = new ArrayList<Car>();
-        for (Car car : usedCar) {
-            if (car.getChargingTime() <= 2) {
-                carWithFastCharging.add(car);
-            }
-
-        }
-        for (Car car : newCars) {
+        for (Car car : allCars) {
             if (car.getChargingTime() <= 2) {
                 carWithFastCharging.add(car);
             }
@@ -113,9 +105,10 @@ public class Dealership extends ArrayList<Car> {
         return carWithFastCharging;
     }
 
-    public ArrayList<Car> getCarsInStock() {
+
+    public ArrayList<Car> getCarsInStock(ArrayList<Car> allCars) {
         ArrayList<Car> carsInStock = new ArrayList<Car>();
-        for (Car car : usedCar) {
+        for (Car car : allCars) {
             if (getStockI3() > 0) {
                 carsInStock.add(car);
             } else if (getStockFourTwo() > 0) {
@@ -133,90 +126,92 @@ public class Dealership extends ArrayList<Car> {
         }
         return carsInStock;
     }
-    public ArrayList<Car> sortCarsPrice(ArrayList<Car> allCars){
-        if(allCars.size()<=1){
+
+    public ArrayList<Car> sortCarsPrice(ArrayList<Car> allCars) {
+        if (allCars.size() <= 1) {
             return allCars;
         }
-        int mid=allCars.size()/2;
-        Car pivot=allCars.get(mid);
+        int mid = allCars.size() / 2;
+        Car pivot = allCars.get(mid);
 
-        ArrayList<Car>less=new ArrayList<Car>();
-        ArrayList<Car>greater=new ArrayList<Car>();
+        ArrayList<Car> less = new ArrayList<Car>();
+        ArrayList<Car> greater = new ArrayList<Car>();
 
-        for(int i=0;i<allCars.size();i++){
-            if(allCars.get(i).getPrice()<=pivot.getPrice()){
-                if(i==mid){
+        for (int i = 0; i < allCars.size(); i++) {
+            if (allCars.get(i).getPrice() <= pivot.getPrice()) {
+                if (i == mid) {
                     continue;
                 }
                 less.add(allCars.get(i));
-            }
-            else{
+            } else {
                 greater.add(allCars.get(i));
             }
         }
-        return concatenate(sortCarsPrice(less),pivot,sortCarsPrice(greater));
+        return concatenate(sortCarsPrice(less), pivot, sortCarsPrice(greater));
     }
 
-    public ArrayList<Car> sortCarsEnergyConsuption(ArrayList<Car> allCars){
-        if(allCars.size()<=1){
+    public ArrayList<Car> sortCarsEnergyConsuption(ArrayList<Car> allCars) {
+        if (allCars.size() <= 1) {
             return allCars;
         }
-        int mid=allCars.size()/2;
-        Car pivot=allCars.get(mid);
+        int mid = allCars.size() / 2;
+        Car pivot = allCars.get(mid);
 
-        ArrayList<Car>less=new ArrayList<Car>();
-        ArrayList<Car>greater=new ArrayList<Car>();
+        ArrayList<Car> less = new ArrayList<Car>();
+        ArrayList<Car> greater = new ArrayList<Car>();
 
-        for(int i=0;i<allCars.size();i++){
-            if(allCars.get(i).getEnergyConsuption()<=pivot.getEnergyConsuption()){
-                if(i==mid){
+        for (int i = 0; i < allCars.size(); i++) {
+            if (allCars.get(i).getEnergyConsuption() <= pivot.getEnergyConsuption()) {
+                if (i == mid) {
                     continue;
                 }
                 less.add(allCars.get(i));
-            }
-            else{
+            } else {
                 greater.add(allCars.get(i));
             }
         }
-        return concatenate(sortCarsEnergyConsuption(less),pivot,sortCarsEnergyConsuption(greater));
+        return concatenate(sortCarsEnergyConsuption(less), pivot, sortCarsEnergyConsuption(greater));
     }
 
-    public ArrayList<Car> sortHorsePower(ArrayList<Car> allCars){
-        if(allCars.size()<=1){
+    public ArrayList<Car> sortHorsePower(ArrayList<Car> allCars) {
+        if (allCars.size() <= 1) {
             return allCars;
         }
-        int mid=allCars.size()/2;
-        Car pivot=allCars.get(mid);
+        int mid = allCars.size() / 2;
+        Car pivot = allCars.get(mid);
 
-        ArrayList<Car>less=new ArrayList<Car>();
-        ArrayList<Car>greater=new ArrayList<Car>();
+        ArrayList<Car> less = new ArrayList<Car>();
+        ArrayList<Car> greater = new ArrayList<Car>();
 
-        for(int i=0;i<allCars.size();i++){
-            if(allCars.get(i).getHorsePower()<=pivot.getHorsePower()){
-                if(i==mid){
+        for (int i = 0; i < allCars.size(); i++) {
+            if (allCars.get(i).getHorsePower() <= pivot.getHorsePower()) {
+                if (i == mid) {
                     continue;
                 }
                 less.add(allCars.get(i));
-            }
-            else{
+            } else {
                 greater.add(allCars.get(i));
             }
         }
-        return concatenate(sortHorsePower(less),pivot,sortHorsePower(greater));
+        return concatenate(sortHorsePower(less), pivot, sortHorsePower(greater));
     }
 
-    private ArrayList<Car> concatenate(ArrayList<Car> less, Car pivot, ArrayList<Car>greater){
-        ArrayList<Car>list=new ArrayList<Car>();
-        for(int i=0;i<less.size();i++){
+    private ArrayList<Car> concatenate(ArrayList<Car> less, Car pivot, ArrayList<Car> greater) {
+        ArrayList<Car> list = new ArrayList<Car>();
+        for (int i = 0; i < less.size(); i++) {
             list.add(less.get(i));
         }
         list.add(pivot);
-        for(int i=0;i<greater.size();i++){
+        for (int i = 0; i < greater.size(); i++) {
             list.add(greater.get(i));
         }
         return list;
     }
 
+public void getFixBudgetFromGreebBonusProgram(){
+    GreenBonusProgram gb=new GreenBonusProgram();
+    gb.getFixBudget();
+}
 
 
 }

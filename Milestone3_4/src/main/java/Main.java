@@ -5,11 +5,11 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) {
-int s;
+
         /**
          * Create dealership object
          */
-        Dealership dealership = new Dealership("BMW", "Volkswagen","Smart");
+        Dealership dealership = new Dealership("BMW", "Volkswagen", "Smart");
 
         /**
          * Create I3 object
@@ -20,8 +20,8 @@ int s;
         I3 i34 = new I3(125, 110, "BMW", "I34", 2017, 35000, 1, true, 170);
         I3 i35 = new I3(125, 120, "BMW", "I35", 2016, 30000, 3, true, 170);
 
-        I3 i3used = new I3(125, 130, "BMW", "I3used", 2015, 25000, 4, false,  170);
-        I3 i3used1 = new I3(125, 125, "BMW", "I3used1", 2015, 25000, 3, false,  170);
+        I3 i3used = new I3(125, 130, "BMW", "I3used", 2015, 25000, 4, false, 170);
+        I3 i3used1 = new I3(125, 125, "BMW", "I3used1", 2015, 25000, 3, false, 170);
         /**
          * Create eGolf object
          */
@@ -47,24 +47,24 @@ int s;
         /**
          * Create fourfour object
          */
-        FourFour fourfour = new FourFour(110, 100, "Smart", "FourFour", 2015, 15000, 1, true,  90);
-        FourFour fourfour1 = new FourFour(110, 90, "Smart", "FourFour1", 2015, 15000, 2, true,  90);
-        FourFour fourfour2 = new FourFour(110, 90, "Smart", "FourFour2", 2015, 13000, 3, true,  90);
+        FourFour fourfour = new FourFour(110, 100, "Smart", "FourFour", 2015, 15000, 1, true, 90);
+        FourFour fourfour1 = new FourFour(110, 90, "Smart", "FourFour1", 2015, 15000, 2, true, 90);
+        FourFour fourfour2 = new FourFour(110, 90, "Smart", "FourFour2", 2015, 13000, 3, true, 90);
 
-        FourFour fourfourused = new FourFour(110, 110, "Smart", "FourFourUsed", 2014, 11000, 3, false,  90);
-        FourFour fourfourused1 = new FourFour(110, 100, "Smart", "FourFourUsed1", 2014, 11000, 3, false,  90);
+        FourFour fourfourused = new FourFour(110, 110, "Smart", "FourFourUsed", 2014, 11000, 3, false, 90);
+        FourFour fourfourused1 = new FourFour(110, 100, "Smart", "FourFourUsed1", 2014, 11000, 3, false, 90);
 
         /**
          * Create fourtwo object
          */
 
-        FourTwo fourtwo=new FourTwo(100,70,"Smart","FourTwo",2016,23000,1,true,90);
-        FourTwo fourtwo1=new FourTwo(100,80,"Smart","FourTwo1",2016,24000,2,true,90);
-        FourTwo fourtwo2=new FourTwo(100,90,"Smart","FourTwo2",2016,25000,3,true,90);
+        FourTwo fourtwo = new FourTwo(100, 70, "Smart", "FourTwo", 2016, 23000, 1, true, 90);
+        FourTwo fourtwo1 = new FourTwo(100, 80, "Smart", "FourTwo1", 2016, 24000, 2, true, 90);
+        FourTwo fourtwo2 = new FourTwo(100, 90, "Smart", "FourTwo2", 2016, 25000, 3, true, 90);
 
 
-        FourTwo fourtwoused=new FourTwo(100,100,"Smart","FourTwoUsed",2015,15000,3,false,90);
-        FourTwo fourtwoused1=new FourTwo(100,90,"Smart","FourTwoUsed1",2015,15000,3,false,90);
+        FourTwo fourtwoused = new FourTwo(100, 100, "Smart", "FourTwoUsed", 2015, 15000, 3, false, 90);
+        FourTwo fourtwoused1 = new FourTwo(100, 90, "Smart", "FourTwoUsed1", 2015, 15000, 3, false, 90);
 
         /**
          * Add cars in arrayList , usedCars and newCars
@@ -136,15 +136,15 @@ int s;
         dealership.addAllCarrInTheSameList(fourtwoused);
         dealership.addAllCarrInTheSameList(fourtwoused1);
 
-        System.out.println("all cars: "+dealership.getAllCars().size());
-        for (Car car:dealership.getAllCars()) {
+        System.out.println("all cars: " + dealership.getAllCars().size());
+        for (Car car : dealership.getAllCars()) {
             System.out.println(car.toString());
         }
         System.out.println("\n");
         System.out.println("after price sorted: ");
         System.out.println(" \n");
         dealership.sortCarsPrice(dealership.getAllCars());
-        for (Car car:dealership.sortCarsPrice(dealership.getAllCars())) {
+        for (Car car : dealership.sortCarsPrice(dealership.getAllCars())) {
             System.out.println(car.toString());
         }
 
@@ -152,7 +152,7 @@ int s;
         System.out.println("after energyConsuption sorted: ");
         System.out.println(" \n");
         dealership.sortCarsPrice(dealership.getAllCars());
-        for (Car car:dealership.sortCarsEnergyConsuption(dealership.getAllCars())) {
+        for (Car car : dealership.sortCarsEnergyConsuption(dealership.getAllCars())) {
             System.out.println(car.toString());
         }
 
@@ -160,18 +160,18 @@ int s;
         System.out.println("after ehorsePower sorted: ");
         System.out.println(" \n");
         dealership.sortCarsPrice(dealership.getAllCars());
-        for (Car car:dealership.sortHorsePower(dealership.getAllCars())) {
+        for (Car car : dealership.sortHorsePower(dealership.getAllCars())) {
             System.out.println(car.toString());
         }
 
 /**  System.out.println(dealership.quicksort(dealership.getAllCars()));
  * Get the stock from dealership
  */
-        System.out.println("Stock i3 is: "+dealership.getStockI3());
-        System.out.println("Stock eUP is: "+dealership.getStockeUP());
-        System.out.println("Stock eGolf is: "+dealership.getStockeGolf());
-        System.out.println("Stock FourFour is: "+dealership.getStockFourFour());
-        System.out.println("Stock FourTwo is: "+dealership.getStockFourTwo());
+        System.out.println("Stock i3 is: " + dealership.getStockI3());
+        System.out.println("Stock eUP is: " + dealership.getStockeUP());
+        System.out.println("Stock eGolf is: " + dealership.getStockeGolf());
+        System.out.println("Stock FourFour is: " + dealership.getStockFourFour());
+        System.out.println("Stock FourTwo is: " + dealership.getStockFourTwo());
 
         int count = dealership.getNewCars().size();
         System.out.println("newCar list: " + count);
@@ -180,11 +180,28 @@ int s;
         System.out.println("usedCar list: " + count1);
 
 
-            Client client = new Client("Ion","Barbu",30000);
+        Client client = new Client("Ion", "Barbu", 40000);
         client.askForCarsWithFastCharging(dealership);
-        client.buyCarAtFullPrice(i3,dealership);
+        dealership.getCarsWithFastChargingTime(dealership.getAllCars());
+        for (Car car : dealership.getCarsWithFastChargingTime(dealership.getAllCars())) {
+            System.out.println(car.toString());
+        }
+        client.buyCarAtFullPrice(i3, dealership);
+        for (Car car : dealership.getAllCars()) {
+            System.out.println(car.toString());
+        }
+        System.out.println(" \n\n");
+        client.requestGreenBonusFromDealership(dealership);
+        Client client2 = new Client("Mike", "Tyson", 20000);
+        client2.buyCarUsingGreenBonus(i32, dealership);
+        for (Car car : dealership.getAllCars()) {
+            System.out.println(car.toString());
+        }
 
+        client.buyCarAtFullPrice(eup, dealership);
+        client.buyCarUsingGreenBonus(eupused, dealership);
 
     }
+
 
 }
