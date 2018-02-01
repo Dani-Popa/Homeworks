@@ -1,10 +1,11 @@
 import model.*;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         /**
          * Create dealership object
@@ -136,6 +137,7 @@ public class Main {
         dealership.addAllCarrInTheSameList(fourtwoused);
         dealership.addAllCarrInTheSameList(fourtwoused1);
 
+
         System.out.println("all cars: " + dealership.getAllCars().size());
         for (Car car : dealership.getAllCars()) {
             System.out.println(car.toString());
@@ -200,6 +202,12 @@ public class Main {
 
         client.buyCarAtFullPrice(eup, dealership);
         client.buyCarUsingGreenBonus(eupused, dealership);
+
+
+        ArrayList<Car> cars = new ArrayList<Car>(dealership.getAllCars());
+        CarCSV carCSV = new CarCSV();
+        carCSV.getCar(cars);
+
 
     }
 
